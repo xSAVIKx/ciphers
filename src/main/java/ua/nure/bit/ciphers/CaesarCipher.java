@@ -1,10 +1,18 @@
+/**************************************************************************************************
+ * Copyright (c) Iurii Sergiichuk <iurii.sergiichuk@gmail.com> 2015. You're free to use this source code, but you should keep this copyright and cannot remove it in any case.
+ **************************************************************************************************/
+
 package ua.nure.bit.ciphers;
 
 import ua.nure.bit.ciphers.additionals.Alphabet;
 import ua.nure.bit.ciphers.additionals.Language;
 
+import javax.annotation.Nonnull;
+
 /**
- * Created by Iurii Sergiichuk on 12.10.2015.
+ * Implementation of Caesar cipher
+ *
+ * @author Iurii Sergiichuk
  */
 public class CaesarCipher implements Cipher {
     private int offset;
@@ -17,7 +25,7 @@ public class CaesarCipher implements Cipher {
     public CaesarCipher() {
         offset = 3;
         language = Language.ENGLISH;
-        setFirstLanguageAlphabet();
+        firstLanguageAlphabet = Alphabet.getAlphabet(language)[0];
     }
 
     /**
@@ -28,22 +36,22 @@ public class CaesarCipher implements Cipher {
     public CaesarCipher(int offset) {
         this.offset = offset;
         this.language = Language.ENGLISH;
-        setFirstLanguageAlphabet();
+        firstLanguageAlphabet = Alphabet.getAlphabet(language)[0];
     }
 
     public CaesarCipher(int offset, Language language) {
         this.offset = offset;
         this.language = language;
-        setFirstLanguageAlphabet();
+        firstLanguageAlphabet = Alphabet.getAlphabet(language)[0];
     }
 
     @Override
-    public String decode(String message) {
+    public String decode(@Nonnull String message) {
         return encodeInternal(message, language.getAlphabetsAmount() - offset);
     }
 
     @Override
-    public String encode(String message) {
+    public String encode(@Nonnull String message) {
         return encodeInternal(message, offset);
     }
 
@@ -64,10 +72,6 @@ public class CaesarCipher implements Cipher {
             }
         }
         return encoded.toString();
-    }
-
-    private void setFirstLanguageAlphabet() {
-        firstLanguageAlphabet = Alphabet.getAlphabet(language)[0];
     }
 
     public int getOffset() {

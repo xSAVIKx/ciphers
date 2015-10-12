@@ -1,11 +1,19 @@
+/**************************************************************************************************
+ * Copyright (c) Iurii Sergiichuk <iurii.sergiichuk@gmail.com> 2015. You're free to use this source code, but you should keep this copyright and cannot remove it in any case.
+ **************************************************************************************************/
+
 package ua.nure.bit.ciphers;
 
 
+import javax.annotation.Nonnull;
+
 /**
- * Created by Iurii Sergiichuk on 12.10.2015.
+ * Each cipher should implement this interface and should have encode and decode methods.
+ *
+ * @author Iurii Sergiichuk
  */
 public interface Cipher {
-    public String decode(String message);
+    String decode(@Nonnull String message);
 
-    public String encode(String message);
+    String encode(@Nonnull String message);
 }

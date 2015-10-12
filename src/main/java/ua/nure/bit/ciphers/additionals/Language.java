@@ -1,8 +1,9 @@
+/**************************************************************************************************
+ * Copyright (c) Iurii Sergiichuk <iurii.sergiichuk@gmail.com> 2015. You're free to use this source code, but you should keep this copyright and cannot remove it in any case.
+ **************************************************************************************************/
+
 package ua.nure.bit.ciphers.additionals;
 
-/**
- * Created by Iurii Sergiichuk on 12.10.2015.
- */
 public enum Language {
     ENGLISH(26);
     private int alphabetsAmount;
