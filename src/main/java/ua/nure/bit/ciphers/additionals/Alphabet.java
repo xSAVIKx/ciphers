@@ -1,6 +1,6 @@
-/**************************************************************************************************
+/**********************************************************************************************************************
  * Copyright (c) Iurii Sergiichuk <iurii.sergiichuk@gmail.com> 2015. You're free to use this source code, but you should keep this copyright and cannot remove it in any case.
- **************************************************************************************************/
+ **********************************************************************************************************************/
 
 package ua.nure.bit.ciphers.additionals;
 
@@ -16,12 +16,14 @@ import java.util.*;
  * @author Iurii Sergiichuk
  */
 public final class Alphabet {
-    private final static Map<Language, char[]> alphabetMap;
-    private final static char ENGLISH_ALPHABET[] = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    private static final Map<Language, char[]> alphabetMap;
+    private static final char ENGLISH_ALPHABET[] = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    private static final char RUSSIAN_ALPHABET[] = new char[]{'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'щ', 'ш', 'ь', 'ы', 'ъ', 'э', 'ю', 'я'};
 
     static {
         alphabetMap = new EnumMap<>(Language.class);
         alphabetMap.put(Language.ENGLISH, ENGLISH_ALPHABET);
+        alphabetMap.put(Language.RUSSIAN, RUSSIAN_ALPHABET);
     }
 
     /**

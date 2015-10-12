@@ -1,12 +1,21 @@
-/**************************************************************************************************
+/**********************************************************************************************************************
  * Copyright (c) Iurii Sergiichuk <iurii.sergiichuk@gmail.com> 2015. You're free to use this source code, but you should keep this copyright and cannot remove it in any case.
- **************************************************************************************************/
+ **********************************************************************************************************************/
 
 package ua.nure.bit.ciphers.additionals
 
 import spock.lang.Specification
 
 class AlphabetSpockTest extends Specification {
+    def "test getAlphabet with russian language"() {
+        given:
+        def lang = Language.RUSSIAN
+        when:
+        def result = Alphabet.getAlphabet(lang)
+        then:
+        result != null
+        result.length == 33
+    }
 
     def "test getAlphabet with english language"() {
         given:
