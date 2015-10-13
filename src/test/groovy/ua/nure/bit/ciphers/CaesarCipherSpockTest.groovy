@@ -1,3 +1,7 @@
+/**********************************************************************************************************************
+ * Copyright (c) Iurii Sergiichuk <iurii.sergiichuk@gmail.com> 2015. You're free to use this source code, but you should keep this copyright and cannot remove it in any case.
+ **********************************************************************************************************************/
+
 package ua.nure.bit.ciphers
 
 import spock.lang.Specification
@@ -15,12 +19,12 @@ public class CaesarCipherSpockTest extends Specification {
         then:
         result == expectedResult
         where:
-        offset | message || expectedResult
-        1      | "a"     || "b"
-        28     | "a"     || "c"
-        3      | "a"     || "d"
-        4      | "HellO1"|| "LippS1"
-        -1     | "a"     || "z"
+        offset | message  || expectedResult
+        1      | "a"      || "b"
+        28     | "a"      || "c"
+        3      | "a"      || "d"
+        4      | "HellO1" || "LippS1"
+        -1     | "a"      || "z"
     }
 
     @Unroll
@@ -32,11 +36,11 @@ public class CaesarCipherSpockTest extends Specification {
         then:
         result == expectedResult
         where:
-        offset | message || expectedResult
-        1      | "b"     || "a"
-        28     | "c"     || "a"
-        3      | "d"     || "a"
-        4      | "LippS1"||"HellO1"
-        -1     | "z"     || "a"
+        offset | message  || expectedResult
+        1      | "b"      || "a"
+        28     | "c"      || "a"
+        3      | "d"      || "a"
+        4      | "LippS1" || "HellO1"
+        -1     | "z"      || "a"
     }
 }
